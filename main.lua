@@ -1,4 +1,4 @@
-ASSETS_PATH = 'assets'
+ASSETS_PATH = 'assets/'
 
 local screenWidth = 900
 local screenHeight = 720
@@ -116,7 +116,7 @@ end
 local function loadPictures(keyword, n)
     local newTable = {}
     for i = 1, n do
-        local img = love.graphics.newImage('assets/'..keyword..'_'..i..'.jpg')
+        local img = love.graphics.newImage(ASSETS_PATH..keyword..'_'..i..'.jpg')
         table.insert(newTable, img)
     end
     return newTable
@@ -169,8 +169,8 @@ function love.load()
     love.window.setTitle('Love Parrots')
     love.graphics.setBackgroundColor(1, 1, 1)
 
-    background = love.graphics.newImage('assets/background.jpg')
-    cardBack = love.graphics.newImage('assets/cardback.jpg')
+    background = love.graphics.newImage(ASSETS_PATH..'background.jpg')
+    cardBack = love.graphics.newImage(ASSETS_PATH..'cardback.jpg')
     cardBackQuad = love.graphics.newQuad(0, 0, cardWidth, cardHeight, cardWidth, cardHeight)
     parrots = loadPictures('parrot', parrots.n)
     cats = loadPictures('cat', cats.n)
